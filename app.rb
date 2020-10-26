@@ -1,0 +1,18 @@
+require 'sinatra'
+require 'shotgun'
+set :session_secret, "whatever"
+get '/' do
+"Hello!"
+end
+
+get'/secret' do
+"That's the secret message!"
+end
+
+get '/wtf' do
+  "Whatever!"
+end
+get '/cat' do
+  @name = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
